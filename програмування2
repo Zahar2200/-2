@@ -76,3 +76,16 @@ class Year
 
     public override int GetHashCode() => YearNumber.GetHashCode();
 }
+class Program
+{
+    static void Main()
+    {
+        Year year = new Year(2025);
+        year.SetDate(1, 4);
+        year.PrintDayOfWeek(1, 4);
+
+        DateTime startDate = new DateTime(2024, 1, 1);
+        DateTime endDate = new DateTime(2025, 4, 1);
+        year.CalculateInterval(startDate, endDate);
+    }
+}
