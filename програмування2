@@ -38,3 +38,15 @@ class Month
 
     public override int GetHashCode() => MonthNumber.GetHashCode();
 }
+class Year
+{
+    public int YearNumber { get; }
+
+    public Year(int yearNumber)
+    {
+        if (yearNumber < 1)
+            throw new ArgumentOutOfRangeException(nameof(yearNumber), "Рік має бути додатним числом");
+
+        YearNumber = yearNumber;
+        Console.WriteLine($"[Year] Створено рік: {YearNumber}");
+    }
