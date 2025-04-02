@@ -1,0 +1,21 @@
+using System;
+
+class Day
+{
+    public int DayNumber { get; }
+
+    public Day(int dayNumber)
+    {
+        if (dayNumber < 1 || dayNumber > 31)
+            throw new ArgumentOutOfRangeException(nameof(dayNumber), "День має бути в діапазоні 1-31");
+
+        DayNumber = dayNumber;
+        Console.WriteLine($"[Day] Створено день: {DayNumber}");
+    }
+
+    public override string ToString() => $"День: {DayNumber}";
+
+    public override bool Equals(object obj) => obj is Day other && DayNumber == other.DayNumber;
+
+    public override int GetHashCode() => DayNumber.GetHashCode();
+}
