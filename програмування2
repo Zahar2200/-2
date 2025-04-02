@@ -19,3 +19,22 @@ class Day
 
     public override int GetHashCode() => DayNumber.GetHashCode();
 }
+class Month
+{
+    public int MonthNumber { get; }
+
+    public Month(int monthNumber)
+    {
+        if (monthNumber < 1 || monthNumber > 12)
+            throw new ArgumentOutOfRangeException(nameof(monthNumber), "Місяць має бути в діапазоні 1-12");
+
+        MonthNumber = monthNumber;
+        Console.WriteLine($"[Month] Створено місяць: {MonthNumber}");
+    }
+
+    public override string ToString() => $"Місяць: {MonthNumber}";
+
+    public override bool Equals(object obj) => obj is Month other && MonthNumber == other.MonthNumber;
+
+    public override int GetHashCode() => MonthNumber.GetHashCode();
+}
